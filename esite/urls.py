@@ -4,4 +4,5 @@ from . views import *
 
 urlpatterns = [
     path('',views.index,name='index'),
+    path('accounts/', include('allauth.urls')),
 ]
