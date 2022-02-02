@@ -102,7 +102,7 @@ h6{
 /* HERO STARTS */
 
 #hero{
-    background-image: url("/img/hero4.png");
+    background-image: url('/img/hero4.png');
     height: 90vh;
     width: 100%;
     background-size: cover;

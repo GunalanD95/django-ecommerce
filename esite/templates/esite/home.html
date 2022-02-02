@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rexon</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <body>
     
     <section id="header">
-        <a href="#"><img src="img/logo.png" alt=""></a>
+        <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>
         <div>
             <nav>
                 <ul id="nav-bar">
@@ -35,27 +37,27 @@
 
     <section id="feature" class="section-p1">
         <div class="fe-box">
-            <img src="/img/features/f1.png" alt="">
+            <img src="{% static '/img/features/f1.png' %}" alt="">
             <h6>Free Shipping</h6>
         </div>
         <div class="fe-box">
-            <img src="/img/features/f2.png" alt="">
+            <img src="{% static '/img/features/f2.png' %}" alt="">
             <h6>Online Order</h6>
         </div>
         <div class="fe-box">
-            <img src="/img/features/f3.png" alt="">
+            <img src="{% static '/img/features/f3.png' %}" alt="">
             <h6>Save Money</h6>
         </div>
         <div class="fe-box">
-            <img src="/img/features/f4.png" alt="">
+            <img src="{% static '/img/features/f4.png' %}" alt="">
             <h6>Promotions</h6>
         </div>
         <div class="fe-box">
-            <img src="/img/features/f5.png" alt="">
+            <img src="{% static '/img/features/f5.png' %}" alt="">
             <h6>Happy Sell</h6>
         </div>
         <div class="fe-box">
-            <img src="/img/features/f6.png" alt="">
+            <img src="{% static '/img/features/f6.png' %}" alt="">
             <h6>F24/7 Support</h6>
         </div>
     </section>
@@ -68,7 +70,7 @@
         <div class="container">
 
             <div class="pro">
-                <img src="./img/products/f1.jpg" alt="">
+                <img src="{% static '/img/products/f1.jpg' %}" alt="">
                 <div class="des">
                     <span>Adidas</span>
                     <h5>Berhohh T-Shirts</h5>
@@ -85,7 +87,7 @@
             
 
             <div class="pro">
-                <img src="./img/products/f1.jpg" alt="">
+                <img src="{% static '/img/products/f2.jpg' %}" alt="">
                 <div class="des">
                     <span>Adidas</span>
                     <h5>Berhohh T-Shirts</h5>
@@ -101,7 +103,7 @@
             </div>
 
             <div class="pro">
-                <img src="./img/products/f1.jpg" alt="">
+                <img src="{% static '/img/products/f3.jpg' %}" alt="">
                 <div class="des">
                     <span>Adidas</span>
                     <h5>Berhohh T-Shirts</h5>
@@ -117,7 +119,7 @@
             </div>
 
             <div class="pro">
-                <img src="./img/products/f1.jpg" alt="">
+                <img src="{% static '/img/products/f4.jpg' %}" alt="">
                 <div class="des">
                     <span>Adidas</span>
                     <h5>Berhohh T-Shirts</h5>
@@ -133,7 +135,7 @@
             </div>
 
             <div class="pro">
-                <img src="./img/products/f1.jpg" alt="">
+                <img src="{% static '/img/products/f5.jpg' %}" alt="">
                 <div class="des">
                     <span>Adidas</span>
                     <h5>Berhohh T-Shirts</h5>
@@ -149,7 +151,7 @@
             </div>
 
             <div class="pro">
-                <img src="./img/products/f1.jpg" alt="">
+                <img src="{% static '/img/products/f6.jpg' %}" alt="">
                 <div class="des">
                     <span>Adidas</span>
                     <h5>Berhohh T-Shirts</h5>
@@ -165,7 +167,7 @@
             </div>
 
             <div class="pro">
-                <img src="./img/products/f1.jpg" alt="">
+                <img src="{% static '/img/products/f7.jpg' %}" alt="">
                 <div class="des">
                     <span>Adidas</span>
                     <h5>Berhohh T-Shirts</h5>
