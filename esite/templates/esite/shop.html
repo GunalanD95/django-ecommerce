@@ -6,22 +6,6 @@
 {% endblock %}
 
 {% block content %}
-    
-    <section id="header">
-        <a href="#"><img src="img/logo.png" alt=""></a>
-        <div>
-            <nav>
-                <ul id="nav-bar">
-                    <li><a class="active" href="index.html">HOME</a></li>
-                    <li><a class="active" href="shop.html">SHOP</a></li>
-                    <li><a class="active" href="blog.html">BLOG</a></li>
-                    <li><a class="active" href="about.html">ABOUT</a></li>
-                    <li><a class="active" href="contact.html">CONTACT</a></li>
-                    <li><a class="active" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
-                </ul>
-            </nav>
-        </div>
-    </section>
 
     <section id="hero">
         <h2>#stayhome</h2>
@@ -34,19 +18,22 @@
 
         <div class="container">
 
+            
             <div class="pro">
-                <img src="{% static '/img/products/f1.jpg' %}"  alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Berhohh T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <a href="{% url 'product' %}" style="text-decoration: none;">
+                    <img src="{% static '/img/products/f1.jpg' %}"  alt="">
+                    <div class="des">
+                        <span>Adidas</span>
+                        <h5>Berhohh T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$56</h4>
                     </div>
-                    <h4>$56</h4>
-                </div>
+                </a>
                 <a href=""><i class="fas fa-shopping-cart cart"></i></a>
             </div>
             

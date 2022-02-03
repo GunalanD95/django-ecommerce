@@ -6,5 +6,6 @@ urlpatterns = [
     path('',views.index,name='index'),
     path('shop/',views.shop,name='shop'),
     path('product/',views.product,name='product'),
+    path('about/',views.about,name='about'),
     path('accounts/', include('allauth.urls')),
 ]

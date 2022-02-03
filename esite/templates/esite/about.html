@@ -1,0 +1,29 @@
+{% extends "esite/base.html" %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="aboutheader" class="section-p1">
+    <h2>#KnowUs</h2>
+    <p>Our Mission is to increase the public's enjoyment and understanding of modern clothing</p>
+</section>
+
+
+<section id="main-about">
+    <div class="abt-img">
+        <img src="{% static '/img/about/a6.jpg' %}" alt="">
+    </div>
+    <div class="abt-text">
+        <h2>Who We Are?</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sint officiis voluptatem distinctio perferendis porro, veniam recusandae commodi adipisci mollitia? Optio vitae perspiciatis maxime enim veritatis, modi id cum quam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias commodi enim nostrum distinctio dolore! Voluptatum omnis error harum incidunt quod sapiente nemo, nulla, corporis repudiandae voluptate facilis porro ea ullam.</p>
+    </div>
+</section>
+
+{% endblock %}
+
+<script src="index.js"></script>
+</body>
+</html>

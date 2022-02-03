@@ -11,3 +11,6 @@ def shop(request):
 
 def product(request):
     return render(request, 'esite/product.html')
+
+def about(request):
+    return render(request, 'esite/about.html')

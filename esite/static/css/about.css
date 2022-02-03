@@ -1,0 +1,46 @@
+#aboutheader{
+    background-image: url("/static/img/about/banner.jpg");
+    height: 40vh;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 100%;
+    padding: 0 80px;
+    text-align: center;
+    
+}
+
+#aboutheader h2{
+    padding-top: 65px;
+    color: #ffff;
+    font-weight: bolder;
+    text-align: center;
+
+}
+
+#aboutheader p{
+    color: #ffff;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+#main-about{
+    margin-top:30px;
+    margin-bottom:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+
+}
+
+#main-about .abt-img img{
+    width: 100%;
+    padding: 0 20px;
+}
+
+#main-about .abt-text{
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 200px;
+}

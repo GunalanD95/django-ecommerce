@@ -17,11 +17,10 @@
         <div>
             <nav>
                 <ul id="nav-bar">
-                    <li><a class="active" href="index.html">HOME</a></li>
-                    <li><a class="active" href="shop.html">SHOP</a></li>
-                    <li><a class="active" href="blog.html">BLOG</a></li>
-                    <li><a class="active" href="about.html">ABOUT</a></li>
-                    <li><a class="active" href="contact.html">CONTACT</a></li>
+                    <li><a class="active"  href="{% url 'index' %}">HOME</a></li>
+                    <li><a class="active" href="{% url 'shop' %}">SHOP</a></li>
+                    <li><a class="active" href="{% url 'about' %}">ABOUT</a></li>
+                    <li><a class="active" href="contact.html">CONTACT US</a></li>
                     <li><a class="active" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </nav>
