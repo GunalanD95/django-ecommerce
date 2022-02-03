@@ -102,7 +102,7 @@ h6{
 /* HERO STARTS */
 
 #hero{
-    background-image: url('/img/hero4.png');
+    background-image: url('/static/img/hero4.png');
     height: 90vh;
     width: 100%;
     background-size: cover;
@@ -299,3 +299,339 @@ h6{
     color: #088178;
 }
 /* PRODUCTS SECTION ENDS */
+
+
+/* BANNER STARTS */
+
+#banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("/static/img/banner/b2.jpg");
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+}
+
+
+#banner h4{
+    font-size: 19px;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 10px 0;
+    margin-top: 5px;
+}
+
+#banner h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 10px 0;
+    margin-top: 5px;
+}
+
+
+#banner h2 span{
+    color:#f05321;
+}
+
+
+#banner button{
+    border-radius: 5px;
+    padding: 5px 25px;
+    font-weight: bolder;
+    font-size: 23px;
+    font-weight: bolder;
+    color: #fff;
+    background: #FD7F20;
+    margin-top: 5px;
+}
+
+#banner button:hover{
+    background-color: #0B6F5F;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+/* BANNER ENDS */
+
+
+
+
+/* NEW ARRIVALS STARTS */
+
+#new-arrivals{
+    text-align: center;
+    margin-top: 20px;
+}
+
+#new-arrivals .container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#new-arrivals .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 2px solid #cce7d0;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 15px 20px;
+    position: relative;
+}
+
+#new-arrivals .pro:hover{
+    box-shadow: 10px 10px 60px rgba(70,62,221,0.2);
+}
+
+#new-arrivals .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+#new-arrivals .pro .des{
+    text-align: start;
+    padding: 10px 0;
+}
+
+#new-arrivals .pro .des span{
+    font-size: 15px;
+    font-weight: bold;
+    color: #088178;
+}
+
+#new-arrivals .pro .des h5{
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+}
+
+#new-arrivals .pro .des i{
+    font-size: 12px;
+    color: rgba(243,181,25);
+}
+
+#new-arrivals .pro .des h4{
+    padding-top: 7px;
+    font-size: 18px;
+    font-weight: 700;
+    color: darkolivegreen;
+}
+
+#new-arrivals .pro .cart{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #d1e8f2;
+    color: #222;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 30px;
+    right:20px;
+}
+
+#new-arrivals .pro .cart:hover{
+    text-decoration: none;
+    color: #088178;
+}
+
+
+/* NEW ARRIVALS ENDS */
+
+
+/* BANNER STYLE STARTS */
+#sm-banner{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#sm-banner .banner-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    background-image: url("/static/img/banner/b17.jpg");
+    min-width: 580px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+}
+
+#sm-banner h4{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#sm-banner h2{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+#sm-banner span{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    padding-bottom: 12px;
+}
+
+
+#sm-banner button{
+    padding: 0 15px;
+    font-weight: 500;
+    font-size: 23px;
+    color: #fff;
+    background-color: #0B6F5F;
+    margin-top: 5px;
+    border: 2px solid #0B6F5F;
+}
+
+#sm-banner button:hover{
+    background: transparent;
+    color: #fff;
+    transition: 0.5s ease;
+    border: 2px solid #fff;
+}
+
+#sm-banner .banner-box2{
+    background: url("/static/img/banner/b10.jpg");
+}
+
+#banner3{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#banner3 .banner-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    background-image: url("/static/img/banner/b7.jpg");
+    min-width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+#banner3 h2{
+    color: #fff;
+    font-weight: bolder;
+    font-size: 32px;
+}
+
+#banner3 h3{
+    color: #fff;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+#banner3 .banner-ex1{
+    background: url("/static/img/banner/b4.jpg");
+    background-size: cover;
+}
+
+#banner3 .banner-ex2{
+    background: url("/static/img/banner/b18.jpg");
+    background-size: cover;
+    color: #fff;
+}
+
+
+/* BANNER STYLE ENDS */
+
+
+/* FOOTER STARTS */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0px;
+}
+
+
+footer a{
+    font-size: 13px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #222;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+footer .copy{
+    width: 100%;
+    text-align: center;
+}
+
+footer .follow{
+    margin-top: 20px;
+}
+
+footer .follow .fa-facebook-f{
+    font-size: 30px;
+    color: #3b5998;
+    margin-right: 10px;
+}
+footer .follow .fa-twitter{
+    font-size: 30px;
+    color: #00acee;
+    margin-right: 10px;
+}
+footer .follow .fa-instagram{
+    font-size: 30px;
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-right: 10px;
+}
+
+footer .install .row img{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer .install img{
+    margin: 10px 0 15px 0;
+}
+
+/* FOOTER ENDS */
