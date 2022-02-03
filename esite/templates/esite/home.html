@@ -1,32 +1,11 @@
+{% extends "esite/base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rexon</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <body>
-    
-    <section id="header">
-        <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>
-        <div>
-            <nav>
-                <ul id="nav-bar">
-                    <li><a class="active" href="index.html">HOME</a></li>
-                    <li><a class="active" href="shop.html">SHOP</a></li>
-                    <li><a class="active" href="blog.html">BLOG</a></li>
-                    <li><a class="active" href="about.html">ABOUT</a></li>
-                    <li><a class="active" href="contact.html">CONTACT</a></li>
-                    <li><a class="active" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
-                </ul>
-            </nav>
-        </div>
-    </section>
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
 
+{% block content %}
     <section id="hero">
         <h4>Trade-in-Offer</h4>
         <h2>Super Value deal</h2>
@@ -331,67 +310,7 @@
             <h3>New Modern Trends Available Now</h3>
         </div>    
     </section>
-
-
-    <footer class="section-p1">
-        <div class="col">
-            <img class="logo" src="{% static '/img/logo.png' %}" alt="">
-            <h4>Contact</h4>
-            <p><strong>Address:</strong>7th Floor, Garvebhavipalya, Hosur Road, Bangalore – 560068, Karnataka, India.</p>
-            <p><strong>Phone: </strong> +917904107266</p>
-            <p><strong>Hours: </strong> 10:00 - 18:00,Mon - Sat</p>
-            <div class="follow">
-                <h4>Follow Us</h2>
-                    <div class="icon">
-                        <!-- add social media icons -->
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-
-                    </div>
-            </div>
-        </div>
-
-        <div class="col about">
-            <h4>About</h4>
-            <a href="#">About Us</a>
-            <a href="#">Delivery Information</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms and Conditons</a>
-            <a href="#">Contact Us</a>
-        </div>
-
-        <div class="col account">
-            <h4>My Account</h4>
-            <a href="#">Sign in</a>
-            <a href="#">View Cart</a>
-            <a href="#">My Wishlist</a>
-            <a href="#">Track My Order</a>
-            <a href="#">Help</a>
-        </div>
-
-        <div class="col install">
-            <h4>Install App</h4>
-            <p>From App Store or Google Play</p>
-            <div class="row">
-                <img src="{% static '/img/pay/app.jpg' %}" alt="">
-                <img src="{% static '/img/pay/play.jpg' %}" alt="">
-            </div>
-
-            <p>Secured Payment Gateways</p>
-            <img src="{% static '/img/pay/pay.jpg' %}" alt="">
-        </div>
-
-        <div class="copy">
-            <p>© 2022 Acme, Inc. All rights reserved.</p>
-        </div>
-    </footer>
-
-
-
-
-
-
+{% endblock %}
 
     <script src="index.js"></script>
 </body>
