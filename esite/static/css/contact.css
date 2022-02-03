@@ -1,0 +1,127 @@
+#contactheader{
+    background-image: url("/static/img/about/q1.jpg");
+    height: 40vh;
+    width: 100%;
+    background-size: cover;
+    background-position: 25% 25%;
+    padding: 0 80px;
+    text-align: center;
+    
+}
+
+#contactheader h2{
+    padding-top: 65px;
+    color: #ffff;
+    font-weight: bolder;
+    text-align: center;
+
+}
+
+#contactheader p{
+    color: #ffff;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#contactmain{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#contactmain .contact-address{
+    width: 40%;
+}
+
+#contactmain .contact-address span{
+    font-size: 12px;
+}
+
+#contactmain .contact-address h2{
+    font-size: 26px;
+    line-height: 35px;
+    padding: 20px 0;
+}
+
+#contactmain .contact-address h3{
+    font-size: 16px;
+    line-height: 35px;
+    padding: 20px 0;
+}
+
+
+#contactmain .contact-address .contact-child li{
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+}
+
+#contactmain .contact-address .contact-child i{
+    font-size: 14px;
+    padding-right: 22px;
+}
+
+#contactmain .contact-address .contact-child p{
+    font-size: 14px;
+    margin: 0;
+}
+
+#contactusform{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding:80px;
+    border: 1px solid #e1e1e1;
+}
+
+#contactusform form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#contactusform .mail-sec{
+    width: 65%;
+}
+#contactusform form h2{
+    padding: 20px 0;
+}
+
+
+#contactusform form input{
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+    border-bottom: 1px solid #ccc;
+}
+
+#contactusform form textarea{
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+    border-bottom: 1px solid #ccc;
+}
+
+#contactusform form button{
+    width: 30%;
+    font-size: 22px;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+    border-bottom: 1px solid #ccc;
+    background-color: #00bcd4;
+    color: #ffff;
+    font-weight: bolder;
+}
+
+#contactusform form button:hover{
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}

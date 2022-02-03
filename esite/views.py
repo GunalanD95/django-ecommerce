@@ -14,3 +14,6 @@ def product(request):
 
 def about(request):
     return render(request, 'esite/about.html')
+
+def contact(request):
+    return render(request, 'esite/contact.html')
