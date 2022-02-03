@@ -8,3 +8,6 @@ def index(request):
 
 def shop(request):
     return render(request, 'esite/shop.html')
+
+def product(request):
+    return render(request, 'esite/product.html')

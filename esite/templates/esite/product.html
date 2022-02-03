@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rexon</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <body>
+    
+    <section id="header">
+        <a href="#"><img src="{% static '/img/logo.png' %}" alt=""></a>
+        <div>
+            <nav>
+                <ul id="nav-bar">
+                    <li><a class="active" href="index.html">HOME</a></li>
+                    <li><a class="active" href="shop.html">SHOP</a></li>
+                    <li><a class="active" href="blog.html">BLOG</a></li>
+                    <li><a class="active" href="about.html">ABOUT</a></li>
+                    <li><a class="active" href="contact.html">CONTACT</a></li>
+                    <li><a class="active" href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section id="pro-details" class="section-p1">
+        <div class="pro-img">
+            <img src="{% static '/img/products/f1.jpg' %}" width="100%" id="MainImage" alt="single product">
+
+            <div class="sml-imgs">
+                <div class="small-img-col">
+                    <img src="{% static '/img/products/f1.jpg' %}" class="SmallImages" width="100%" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="{% static '/img/products/f2.jpg' %}" class="SmallImages" width="100%" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="{% static '/img/products/f3.jpg' %}" class="SmallImages" width="100%" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="{% static '/img/products/f4.jpg' %}" class="SmallImages" width="100%" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="pro-img-details">
+            <h6>Home /T-Shirt </h6>
+            <h4>Men's Fashion T Shirt</h4>
+            <h2>$12</h2>
+            <select name="" id="">
+                <option value="">Select Size</option>
+                <option value="">XL</option>
+                <option value="">XXL</option>
+                <option value="">ML</option>
+                <option value="">Large</option>
+            </select>
+            <input type="number" value="1" name="" id="">
+            <button>Add to Cart</button>
+            <h4>Product Details</h4>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi itaque iusto saepe distinctio! Suscipit eos ipsum quam incidunt, aperiam, numquam amet dicta neque, iste omnis dolorem! Ex maxime rem laborum?</span>
+        </div>
+    </section>
+
+
+    <section id="product1" class="section-p1"> 
+        <h2>Similar Products</h2>
+        <!-- <p>Summer Collection New Modern Design</p> -->
+
+        <div class="container">
+
+            <div class="pro">
+                <img src="{% static '/img/products/f1.jpg' %}" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Berhohh T-Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$56</h4>
+                </div>
+                <a href=""><i class="fas fa-shopping-cart cart"></i></a>
+            </div>
+            
+
+            <div class="pro">
+                <img src="{% static '/img/products/f2.jpg' %}" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Berhohh T-Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$56</h4>
+                </div>
+                <a href=""><i class="fas fa-shopping-cart cart"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="{% static '/img/products/f3.jpg' %}" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Berhohh T-Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$56</h4>
+                </div>
+                <a href=""><i class="fas fa-shopping-cart cart"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="{% static '/img/products/f4.jpg' %}" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Berhohh T-Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$56</h4>
+                </div>
+                <a href=""><i class="fas fa-shopping-cart cart"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="{% static '/img/logo.png' %}" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong>7th Floor, Garvebhavipalya, Hosur Road, Bangalore – 560068, Karnataka, India.</p>
+            <p><strong>Phone: </strong> +917904107266</p>
+            <p><strong>Hours: </strong> 10:00 - 18:00,Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow Us</h2>
+                    <div class="icon">
+                        <!-- add social media icons -->
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+
+                    </div>
+            </div>
+        </div>
+
+        <div class="col about">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms and Conditons</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col account">
+            <h4>My Account</h4>
+            <a href="#">Sign in</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="{% static '/img/pay/app.jpg' %}" alt="">
+                <img src="{% static '/img/pay/play.jpg' %}" alt="">
+            </div>
+
+            <p>Secured Payment Gateways</p>
+            <img src="{% static '/img/pay/pay.png' %}" alt="">
+        </div>
+
+        <div class="copy">
+            <p>© 2022 Acme, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        var MainImage = document.getElementById('MainImage');
+        var SmallImage = document.getElementsByClassName('SmallImages');
+
+        SmallImage[0].onclick = function(){
+            MainImage.src = SmallImage[0].src;
+        }
+        SmallImage[1].onclick = function(){
+            MainImage.src = SmallImage[1].src;
+        }
+        SmallImage[2].onclick = function(){
+            MainImage.src = SmallImage[2].src;
+        }
+        SmallImage[3].onclick = function(){
+            MainImage.src = SmallImage[3].src;
+        }
+    </script>
+
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
