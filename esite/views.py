@@ -17,3 +17,6 @@ def about(request):
 
 def contact(request):
     return render(request, 'esite/contact.html')
+
+def cart(request):
+    return render(request, 'esite/cart.html')

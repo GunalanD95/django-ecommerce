@@ -1,0 +1,85 @@
+{% extends "esite/base.html" %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="contactheader" class="section-p1">
+    <h2>Thank you for choosing us! </h2>
+    <p> We appreciate it.</p>
+</section>
+
+
+<section id="cart" class="section-p1 cart">
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Remove</th>
+                <th>Product</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>        
+                <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+
+                <td>
+                    T-SHIRT
+                </td>
+
+                <td>
+                    <img src="{% static '/img/products/f1.jpg' %}" alt="">
+                </td>
+
+                <td>$119.00</td>
+
+                <td><input type="number" value="1" name="quantity" id=""></td>
+
+                <td>$200</td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+<section id="cart-add" class="section-p1">
+    <div id="couponcode">
+        <h3>Apply Coupon</h3>
+        <div>
+            <input  type="text" name="" id="" placeholder="Enter Your Coupoun">
+            <button class="addcartBtn">Apply</button>
+        </div>
+    </div>
+
+    <div id="subtotal">
+        <h3>Cart Totals</h3>
+        <table>
+            <tr>
+                <td>Cart Subtotals</td>
+                <td>$334</td>
+            </tr>
+            <tr>
+                <td>Shipping</td>
+                <td>Free</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>$334</strong></td>
+            </tr>
+        </table>
+        <button>Proceed to Checkout</button>
+    </div>
+</section>
+
+{% endblock %}
+
+<script src="index.js"></script>
+</body>
+</html>
