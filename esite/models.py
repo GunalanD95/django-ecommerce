@@ -24,6 +24,8 @@ class ProductCategory(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
+    display_name = models.CharField(max_length=25, null=True)
+    description = models.TextField(max_length=1000 , null=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     featured = models.BooleanField(default=False,null=True , blank=True)
     product_category = models.ForeignKey(ProductCategory,null=True , blank=True , on_delete=models.CASCADE)
@@ -34,7 +36,7 @@ class Product(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return self.display_name
 
 
 class SaleOrder(models.Model):
