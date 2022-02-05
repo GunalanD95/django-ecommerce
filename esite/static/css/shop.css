@@ -173,6 +173,20 @@ h6{
     border-radius: 20px;
 }
 
+.pro img{
+    max-width:222px;
+    max-height:222px;
+    min-width:222px;
+    min-height:222px; 
+}
+
+.pro{
+    min-width:250px;
+    min-height:380px;
+    max-width:250px;
+    max-height:380px; 
+}
+
 #product1 .pro .des{
     text-align: start;
     padding: 10px 0;

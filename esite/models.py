@@ -2,6 +2,7 @@ from turtle import title
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
+from django_resized import ResizedImageField
 
 
 class Customer(models.Model):
@@ -28,6 +29,7 @@ class Product(models.Model):
     product_category = models.ForeignKey(ProductCategory,null=True , blank=True , on_delete=models.CASCADE)
     digital = models.BooleanField(default=False,null=True , blank=True)
     image = models.ImageField(upload_to='product_images/', null=True , blank=True)
+    # image = ResizedImageField(size=[222, 222], upload_to='product_images/', null=True , blank=True)
     brand_name = models.CharField(max_length=200 , null=True)
 
 
