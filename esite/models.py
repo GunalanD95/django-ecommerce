@@ -1,29 +1,44 @@
 from turtle import title
 from django.db import models
 from django.conf import settings
-# Create your models here.
+from django.contrib.auth.models import User
 
 
-class OrderCart(models.Model):
-    title = models.CharField(max_length=100)
-    price = models.FloatField()
-    quantity = models.IntegerField()
-    def __str__(self):
-        return self.title
+class Customer(models.Model):
+    user_id = models.OneToOneField(User,null=True , blank=True , on_delete=models.CASCADE)
+    name = models.CharField(max_length=200 ,null=True)
+    email = models.EmailField(max_length=150,null=True)
 
-
-class OrderItem(models.Model):
-    item_name = models.ForeignKey(OrderCart, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return self.name
 
-class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
-    ordered = models.BooleanField(default=False)
-    order_date = models.DateField(auto_now_add=True)
-    order_item = models.ManyToManyField(OrderItem)
+class ProductCategory(models.Model):
+    name = models.CharField(max_length=200 , null=True)
 
     def __str__(self):
-        return self.user.username
+        return self.name
+
+
+class Product(models.Model):
+    name = models.CharField(max_length=200)
+    price = models.DecimalField(max_digits=7, decimal_places=2)
+    featured = models.BooleanField(default=False,null=True , blank=True)
+    product_category = models.ForeignKey('ProductCategory',null=True , blank=True , on_delete=models.CASCADE)
+    digital = models.BooleanField(default=False,null=True , blank=True)
+
+
+    def __str__(self):
+        return self.name
+
+
+class SaleOrder(models.Model):
+    customer = models.ForeignKey('Customer',null=True , blank=True , on_delete=models.SET_NULL)
+    date_order = models.DateTimeField(auto_now_add=True)
+    complete = models.BooleanField(default=False,null=True , blank=True)
+    transaction_id = models.CharField(max_length=200,null=True)
+
+    def __str__(self):
+        return str(self.id)
+
