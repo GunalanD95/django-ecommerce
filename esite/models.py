@@ -27,6 +27,7 @@ class Product(models.Model):
     featured = models.BooleanField(default=False,null=True , blank=True)
     product_category = models.ForeignKey('ProductCategory',null=True , blank=True , on_delete=models.CASCADE)
     digital = models.BooleanField(default=False,null=True , blank=True)
+    image = models.ImageField(upload_to='product_images/% Y/% m/% d/', null=True , blank=True)
 
 
     def __str__(self):
@@ -42,3 +43,25 @@ class SaleOrder(models.Model):
     def __str__(self):
         return str(self.id)
 
+
+class OrderItem(models.Model):
+    product = models.ForeignKey(Product , null=True, blank=True , on_delete=models.SET_NULL)
+    order = models.ForeignKey(SaleOrder, null=True, blank=True , on_delete=models.SET_NULL)
+    quantity = models.IntegerField(default=0,null=True , blank=True)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.product.name
+
+
+class ShippingAddress(models.Model):
+    customer = models.ForeignKey(Customer,null=True , blank=True , on_delete=models.SET_NULL)
+    order = models.ForeignKey(SaleOrder,null=True , blank=True , on_delete=models.SET_NULL)
+    address = models.CharField(max_length=200,null=True)
+    city = models.CharField(max_length=200,null=True)
+    state = models.CharField(max_length=200,null=True)
+    zipcode = models.CharField(max_length=200,null=True)
+
+
+    def __str__(self):
+        return self.address
