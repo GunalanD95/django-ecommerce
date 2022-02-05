@@ -25,9 +25,10 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     featured = models.BooleanField(default=False,null=True , blank=True)
-    product_category = models.ForeignKey('ProductCategory',null=True , blank=True , on_delete=models.CASCADE)
+    product_category = models.ForeignKey(ProductCategory,null=True , blank=True , on_delete=models.CASCADE)
     digital = models.BooleanField(default=False,null=True , blank=True)
-    image = models.ImageField(upload_to='product_images/% Y/% m/% d/', null=True , blank=True)
+    image = models.ImageField(upload_to='product_images/', null=True , blank=True)
+    brand_name = models.CharField(max_length=200 , null=True)
 
 
     def __str__(self):
@@ -35,7 +36,7 @@ class Product(models.Model):
 
 
 class SaleOrder(models.Model):
-    customer = models.ForeignKey('Customer',null=True , blank=True , on_delete=models.SET_NULL)
+    customer = models.ForeignKey(Customer,null=True , blank=True , on_delete=models.SET_NULL)
     date_order = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False,null=True , blank=True)
     transaction_id = models.CharField(max_length=200,null=True)

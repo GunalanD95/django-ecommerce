@@ -10,8 +10,9 @@
 
 <section id="pro-details" class="section-p1">
     <div class="pro-img">
-        <img src="{% static '/img/products/f1.jpg' %}" width="100%" id="MainImage" alt="single product">
-
+        {% if product.image %}
+        <img src="{{ product.image.url }}"  width="100%" id="MainImage" alt="single product">
+        {% endif %}
         <div class="sml-imgs">
             <div class="small-img-col">
                 <img src="{% static '/img/products/f1.jpg' %}" class="SmallImages" width="100%" alt="">
@@ -29,8 +30,8 @@
     </div>
     <div class="pro-img-details">
         <h6>Home /T-Shirt </h6>
-        <h4>Men's Fashion T Shirt</h4>
-        <h2>$12</h2>
+        <h4>{{product.name}}</h4>
+        <h2>{{product.price}}</h2>
         <select name="" id="">
             <option value="">Select Size</option>
             <option value="">XL</option>

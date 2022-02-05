@@ -18,27 +18,30 @@
 
         <div class="container">
 
-            
+            {% for product in products %}
             <div class="pro">
-                <a href="{% url 'product' %}" style="text-decoration: none;">
-                    <img src="{% static '/img/products/f1.jpg' %}"  alt="">
+                <a href="{% url 'product' product.id %}" style="text-decoration: none;">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}"  alt="">
+                    {% endif %}
                     <div class="des">
-                        <span>Adidas</span>
-                        <h5>Berhohh T-Shirts</h5>
+                        <span>{{product.brand_name}}</span>
+                        <h5>{{product.name}}</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>$56</h4>
+                        <h4>{{product.price}}</h4>
                     </div>
                 </a>
                 <a href=""><i class="fas fa-shopping-cart cart"></i></a>
             </div>
+            {% endfor %}
             
 
-            <div class="pro">
+            <!-- <div class="pro">
                 <img src="{% static '/img/products/f2.jpg' %}" alt="">
                 <div class="des">
                     <span>Adidas</span>
@@ -213,7 +216,7 @@
                     <h4>$56</h4>
                 </div>
                 <a href=""><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
+            </div> -->
 
         </div>
     </section>

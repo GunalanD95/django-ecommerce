@@ -1,16 +1,23 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Product, ProductCategory , Customer , SaleOrder , OrderItem
 
 
 def index(request):
     return render(request, 'esite/home.html')
 
 def shop(request):
-    return render(request, 'esite/shop.html')
+    products = Product.objects.all()
+    context = {
+        'products': products,
+    }
+    return render(request, 'esite/shop.html' ,context)
 
-def product(request):
-    return render(request, 'esite/product.html')
+def product(request,product_id):
+    product = Product.objects.get(id=product_id)
+    context = {
+        'product': product,
+    }
+    return render(request, 'esite/product.html', context)
 
 def about(request):
     return render(request, 'esite/about.html')
