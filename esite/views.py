@@ -26,4 +26,14 @@ def contact(request):
     return render(request, 'esite/contact.html')
 
 def cart(request):
-    return render(request, 'esite/cart.html')
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order,created = SaleOrder.objects.get_or_create(customer=customer , complete=False)
+        items = order.orderitem_set.all()
+    else:
+        items = []
+    context = {
+        'items': items,
+        'order': order,
+    }
+    return render(request, 'esite/cart.html',context)

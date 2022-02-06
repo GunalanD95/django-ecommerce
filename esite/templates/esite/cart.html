@@ -25,25 +25,29 @@
             </tr>
         </thead>
         <tbody>
+            {% for item in items %}
+
             <tr>        
                 <td><a href="#"><i class="far fa-times-circle"></i></a></td>
 
                 <td>
-                    T-SHIRT
+                    {{item.product.display_name}}
                 </td>
 
                 <td>
-                    <img src="{% static '/img/products/f1.jpg' %}" alt="">
+                    {% if item.product.image %}
+                    <img src="{{ item.product.image.url }}"  alt="">
+                    {% endif %}
                 </td>
 
-                <td>$119.00</td>
+                <td id="product_price">{{item.product.price}}</td>
 
-                <td><input type="number" value="1" name="quantity" id=""></td>
+                <td><input type="number" value="{{item.quantity}}" oninput="calc()" name="quantity" id="quantity"></td>
 
-                <td>$200</td>
-
-
+                <td id="subtotal">{{item.get_total}}</td>
             </tr>
+            {% endfor %}
+           
         </tbody>
     </table>
 </section>
@@ -62,8 +66,12 @@
         <h3>Cart Totals</h3>
         <table>
             <tr>
+                <td>Total Items</td>
+                <td id="total_items">{{order.get_cart_items}}</td>
+            </tr>
+            <tr>
                 <td>Cart Subtotals</td>
-                <td>$334</td>
+                <td id="cart_subtotal">{{order.get_cart_total}}</td>
             </tr>
             <tr>
                 <td>Shipping</td>
@@ -80,10 +88,30 @@
         </table>
         <button type="submit">Proceed to Checkout</button>
     </div>
+
+    <script>
+        function calc(){
+            console.log("calc calling");
+            var quantity = document.getElementById('quantity').value;
+            var price = (document.getElementById('product_price')).innerHTML;
+            subtotal = quantity * price;
+            document.getElementById('subtotal').innerHTML = subtotal;
+
+            var total_subtotal = '';
+            var cart_subtotal = document.getElementById('cart_subtotal');
+            var subtotal = document.getElementById('subtotal').innerHTML;
+            total_subtotal += subtotal;
+            document.getElementById('cart_subtotal').innerHTML = total_subtotal;
+        }
+
+
+    
+    </script>
+
 </section>
 
 {% endblock %}
 
-<script src="index.js"></script>
+
 </body>
 </html>
