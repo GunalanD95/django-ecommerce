@@ -37,3 +37,5 @@ def cart(request):
         'order': order,
     }
     return render(request, 'esite/cart.html',context)
+
+# def add_to_cart(self,product_id):
