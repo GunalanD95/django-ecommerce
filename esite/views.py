@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Product, ProductCategory , Customer , SaleOrder , OrderItem
-
+from django.http import JsonResponse
 
 def index(request):
     return render(request, 'esite/home.html')
@@ -38,4 +38,5 @@ def cart(request):
     }
     return render(request, 'esite/cart.html',context)
 
-# def add_to_cart(self,product_id):
+def addToCart(request):
+    return JsonResponse("item added", safe=False)

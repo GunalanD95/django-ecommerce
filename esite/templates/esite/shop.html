@@ -3,6 +3,7 @@
 
 {% block extrahead %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/shop.css' %}">
+<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -36,7 +37,7 @@
                         <h4>{{product.price}}</h4>
                     </div>
                 </a>
-                <a href=""><i class="fas fa-shopping-cart cart"></i></a>
+                <a class="update-cart" data-product="{{product.id}}" data-action="add" onclick='return check()'><i class="fas fa-shopping-cart cart"></i></a>
             </div>
             {% endfor %}
 
@@ -50,12 +51,32 @@
         </a>
     </section>
 
+    <script>
+        var updateBtns = document.getElementsByClassName('update-cart');
+
+        for(i=0;i<updateBtns.length;i++){
+            updateBtns[i].addEventListener('click',function(){
+                var product_id = this.dataset.product;
+                var action = this.dataset.action;
+                console.log(product_id,action);
+
+                console.log(user);
+
+                if (user == 'AnonymousUser'){
+                    console.log('Please login to add to cart');}
+                else{
+                    updateUserOrder(product_id,action);
+                }
+            })
+        };
+
+        function updateUserOrder(product_id,action){
+            console.log("sending data");
+        }
+
+    </script>
+
 {% endblock %}
-
-
-
-
-
-    <script src="index.js"></script>
+    
 </body>
 </html>

@@ -11,7 +11,27 @@
     <!-- <script type="text/javascript" src="{% static 'js/cart.js' %}"></script> -->
     {% block extrahead %}{% endblock %}
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
     <body>
+
+    <style>
+        #nav-bar #cart-counter{
+           user-select: none;
+           position: absolute;
+           background: red;
+           width:1.3rem;
+           height: 1.3rem;
+           font-size: 8px;
+           border-radius: 50%;
+           font-weight: bold;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           right: 110px;
+           bottom:40px;
+        }
+    </style>
     
     <section id="header">
         <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>
@@ -22,7 +42,7 @@
                     <li><a class="active" href="{% url 'shop' %}">SHOP</a></li>
                     <li><a class="active" href="{% url 'about' %}">ABOUT</a></li>
                     <li><a class="active" href="{% url 'contact' %}">CONTACT US</a></li>
-                    <li><a class="active" href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a class="active" href="{% url 'cart' %}"><span id="cart-counter">0</span><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -33,13 +53,6 @@
     {% block content %}
     
     {% endblock%}
-
-
-
-
-
-
-
 
     <footer class="section-p1">
         <div class="col">
@@ -95,12 +108,8 @@
         </div>
     </footer>
 
-
-
-
-
-
-
-    <script src="index.js"></script>
+    <script>
+        var user= '{{request.user}}'
+    </script>
 </body>
 </html>
