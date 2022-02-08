@@ -82,6 +82,7 @@
                 console.log(user);
 
                 if (user == 'AnonymousUser'){
+                    updateUserOrder(product_id,action);
                     console.log('Please login to add to cart');}
                 else{
                     updateUserOrder(product_id,action);
@@ -95,11 +96,12 @@
             var url = '/add_to_cart/'
             console.log(url);
 
-            fetch('url',{
+            fetch('/add_to_cart/',{
                 method: 'POST',
                 headers:{
-                    'Content-Type': 'application/json',
-                    // 'X-CSRFToken': csrftoken,
+                    'Content-Type': 'application/json ',
+                    'Accept': 'application/json',
+                    'X-CSRFToken': csrftoken,
                 },
                 body:JSON.stringify({
                     'product_id': product_id,
