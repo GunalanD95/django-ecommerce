@@ -1,6 +1,7 @@
 {% extends "esite/base.html" %}
 {% load static %}
 
+
 {% block extrahead %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
 {% endblock %}
@@ -13,7 +14,7 @@
 
 
 <section id="cart" class="section-p1 cart">
-    <table width="100%">
+    <table  class="myTable" width="100%">
         <thead>
             <tr>
                 <th>Remove</th>
@@ -104,8 +105,13 @@
             document.getElementById('cart_subtotal').innerHTML = total_subtotal;
         }
 
+        var rowCount = document.getElementsByTagName("tbody")[0].rows;
+        lengths = rowCount.length;
+        var cartlen = lengths;
 
-    
+        var rcounter = document.getElementById("cart-counter");
+        rcounter.innerHTML = cartlen;
+
     </script>
 
 </section>

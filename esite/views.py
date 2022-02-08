@@ -1,7 +1,9 @@
+import json
 from django.shortcuts import render
 from .models import Product, ProductCategory , Customer , SaleOrder , OrderItem
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+
 
 def index(request):
     return render(request, 'esite/home.html')
@@ -31,15 +33,42 @@ def cart(request):
         customer = request.user.customer
         order,created = SaleOrder.objects.get_or_create(customer=customer , complete=False)
         items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
     else:
         items = []
+        order = {'get_cart_total':0, 'get_cart_items':0}
+        cartItems = order['get_cart_items']
     context = {
         'items': items,
         'order': order,
+        'cartItems':cartItems,
     }
     return render(request, 'esite/cart.html',context)
 
 
-@csrf_exempt
+
 def addToCart(request):
-    return JsonResponse("item added", safe=False)
+    data = json.loads(request.body)
+    product_id = data['product_id']
+    action = data['action']
+    print('Action:', action)
+    print('Product:', product_id)
+
+
+    customer =  request.user.customer
+    product = Product.objects.get(id=product_id)
+    order,created = SaleOrder.objects.get_or_create(customer=customer , complete=False)
+
+    orderItem , created = OrderItem.objects.get_or_create(order=order , product=product)
+
+    if action == 'add':
+        orderItem.quantity = (orderItem.quantity + 1)
+    elif action == 'remove':
+        orderItem.quantity = (orderItem.quantity - 1)
+
+    orderItem.save()
+
+    if orderItem.quantity <= 0:
+        orderItem.delete()
+
+    return JsonResponse('Success', safe=False)
