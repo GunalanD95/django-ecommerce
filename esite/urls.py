@@ -9,6 +9,6 @@ urlpatterns = [
     path('about/',views.about,name='about'),
     path('contact/',views.contact,name='contact'),
     path('cart/',views.cart,name='cart'),
-    path('addToCart/',views.addToCart,name='addToCart'),
+    path('add_to_cart/',views.addToCart,name='addToCart'),
     # path('accounts/', include('allauth.urls')),
 ]

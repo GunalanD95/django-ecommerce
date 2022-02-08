@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Product, ProductCategory , Customer , SaleOrder , OrderItem
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 def index(request):
     return render(request, 'esite/home.html')
@@ -38,5 +39,7 @@ def cart(request):
     }
     return render(request, 'esite/cart.html',context)
 
+
+@csrf_exempt
 def addToCart(request):
     return JsonResponse("item added", safe=False)
