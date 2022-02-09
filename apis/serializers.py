@@ -1,16 +1,11 @@
 from rest_framework import serializers
 
-from esite.models import SaleOrder,ProductCategory,Product,SaleOrder,OrderItem,ShippingAddress
+from esite.models import SaleOrder,ProductCategory,Product,SaleOrder,OrderItem,ShippingAddress, Customer
+from django.contrib.auth.models import User
 
 
-class SaleOrderSerializer(serializers.ModelSerializer):
+
+class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
-        model = SaleOrder
+        model = Customer
         fields = '__all__'
-
-
-    def to_representation(self, instance):
-        data = super().to_representation(instance)
-        data['cart_total'] = instance.get_cart_total()
-        data['total_items'] = instance.get_cart_items()
-        return data
