@@ -3,11 +3,12 @@ from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
 from esite.models import *
-from .serializers import CustomerSerializer
+from .serializers import CustomerSerializer , ProductSerializer
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.views import APIView
 
 #FUNCTION BASED APIS
 
@@ -56,3 +57,45 @@ def customer_details(request,pk):
     elif request.method == 'DELETE':
         customer.delete()
         return HttpResponse(status=status.HTTP_202_ACCEPTED)
+
+
+# CLASS BASED API VIEWS
+
+class ProductView(APIView):
+    
+
+    def get(self,request):
+        products = Product.objects.all()
+        serializer = ProductSerializer(products , many = True)
+        return Response(serializer.data)
+
+    def post(self,request):
+        serializer = ProductSerializer(data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data , status=status.HTTP_201_CREATED)
+        return Response(serializer.data,status=status.HTTP_400_BAD_REQUEST)
+
+class ProductDetail(APIView):
+
+    def get_object(request,pk):
+        try:
+            return Product.objects.get(id=pk)
+        except Product.DoesNotExist:
+            return HttpResponse(status=status.HTTP_404_NOT_FOUND)
+
+    def get(self,request,pk):
+        product = self.get_object(pk)
+        serializer = ProductSerializer(product)
+        return Response(serializer.data)
+
+    
+    def put(self,request,pk):
+        product = self.get_object(pk)
+        serializer = ProductSerializer(product,data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,status=status.HTTP_201_CREATED)
+        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
