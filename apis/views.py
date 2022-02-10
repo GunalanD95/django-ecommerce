@@ -1,16 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
+from numpy import delete
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
 from esite.models import *
-from .serializers import CustomerSerializer , ProductSerializer
+from .serializers import CustomerSerializer , ProductSerializer ,SaleOrderSerializer
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework import generics
-
+from rest_framework import mixins
 
 
 #FUNCTION BASED APIS
@@ -105,3 +106,43 @@ class ProductDetail(APIView):
 
 
 # GENERIC & MIXIN VIEWS
+
+class GenericAPIView(generics.GenericAPIView,mixins.ListModelMixin , mixins.CreateModelMixin ,
+                     mixins.UpdateModelMixin, mixins.RetrieveModelMixin,
+                     mixins.DestroyModelMixin):
+    serializer_class = SaleOrderSerializer
+    queryset = OrderItem.objects.all()
+    lookup_field = 'id'
+
+    #inbuilt 
+    # def list(self, request):
+    #     # Note the use of `get_queryset()` instead of `self.queryset`
+    #     queryset = self.get_queryset()
+    #     serializer = UserSerializer(queryset, many=True)
+    #     return Response(serializer.data)
+
+    # def get_object(self):
+    #     queryset = self.filter_queryset(self.get_queryset())
+    #     # make sure to catch 404's below
+    #     obj = queryset.get(pk=self.request.user.organisation_id)
+    #     self.check_object_permissions(self.request, obj)
+    #     return obj
+
+
+    def get(self,request,id=None):
+        if id:
+            queryset = self.get_queryset()
+            serializer = SaleOrderSerializer(queryset, many=True)
+            return Response(serializer.data)
+        else:
+            return self.list(request)
+
+    def post(self,request):
+        return self.create(request)
+
+    def put(self,request,id=None):
+        # id = self.get_object(pk)
+        return self.update(request,id)
+
+    def delete(self,request,id):
+        return self.destroy(request,id)
