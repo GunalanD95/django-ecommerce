@@ -1,8 +1,9 @@
 import json
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Product, ProductCategory , Customer , SaleOrder , OrderItem
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import requests
 
 
 def index(request):
@@ -72,3 +73,15 @@ def addToCart(request):
         orderItem.delete()
 
     return JsonResponse('Success', safe=False)
+
+
+def deleteItemcart(request,order_id):
+    api_params = {'id':order_id}
+    url = 'http://localhost:8000/apis/saleorders/{id}/'.format(**api_params)
+    apicall = requests.get(url)
+    print(apicall.url)
+    json_respons = apicall.json()
+    print('json_respons:', json_respons)
+
+    delete = requests.delete(url)
+    return redirect('cart')

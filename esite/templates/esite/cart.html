@@ -29,7 +29,7 @@
             {% for item in items %}
 
             <tr>        
-                <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                <td><a href="{% url 'deleteItemcart' item.id %}"><i class="far fa-times-circle"></i></a></td>
 
                 <td>
                     {{item.product.display_name}}
