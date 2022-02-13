@@ -32,13 +32,16 @@
         <h6>Home /T-Shirt </h6>
         <h4>{{product.name}}</h4>
         <h2>{{product.price}}</h2>
-        <select name="" id="">
-            <option value="">Select Size</option>
-            <option value="">XL</option>
-            <option value="">XXL</option>
-            <option value="">ML</option>
-            <option value="">Large</option>
-        </select>
+        <select class="select" name="product_variant">
+            {% for cus in variant %}
+            <option value="{{ cus.id }}">{{ cus.size }}</option>
+            {% endfor %}
+        </select>   
+        <select class="select" name="product_variant2s">
+            {% for cuss in variant %}
+            <option value="{{ cuss.id }}">{{ cuss.color }}</option>
+            {% endfor %}
+        </select>   
         <input type="number" value="1" name="" id="">
         <button>Add to Cart</button>
         <h4>Product Details</h4>

@@ -26,11 +26,10 @@ class ProductCategory(models.Model):
         return self.name
 
 class ProductVariant(models.Model):
-
-    category = models.ForeignKey(ProductCategory,null=True, on_delete=models.CASCADE)
-    variant = models.CharField(max_length=200,null=True)
-    color = models.CharField(max_length=200,null=True)
-    size = models.CharField(max_length=200,null=True)
+    category = models.ForeignKey(ProductCategory,null=True,blank=True , on_delete=models.CASCADE)
+    variant = models.CharField(max_length=200,blank=True ,null=True)
+    color = models.CharField(max_length=200,blank=True ,null=True)
+    size = models.CharField(max_length=200,blank=True ,null=True)
 
     def __str__(self):
         return self.size + ' ' + self.color
@@ -50,7 +49,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='product_images/', null=True , blank=True)
     # image = ResizedImageField(size=[222, 222], upload_to='product_images/', null=True , blank=True)
     brand_name = models.CharField(max_length=200 , null=True)
-    product_variant = models.ForeignKey(ProductVariant,null=True , blank=True , on_delete=models.CASCADE)
+    variant = models.ManyToManyField(ProductVariant,null=True , blank=True )
 
 
     def __str__(self):
