@@ -1,4 +1,5 @@
 from turtle import title
+from unicodedata import category
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -15,12 +16,7 @@ class Customer(models.Model):
         return self.name
 
 
-class ProductVariant(models.Model):
-    variant = models.CharField(max_length=200)
-    color = models.CharField(max_length=200)
 
-    def __str__(self):
-        return self.variant + ' ' + self.color
     
 
 class ProductCategory(models.Model):
@@ -29,6 +25,14 @@ class ProductCategory(models.Model):
     def __str__(self):
         return self.name
 
+class ProductVariant(models.Model):
+    category = models.OneToOneField(ProductCategory,null=True, on_delete=models.CASCADE)
+    variant = models.CharField(max_length=200,null=True)
+    color = models.CharField(max_length=200,null=True)
+    size = models.CharField(max_length=200,null=True)
+
+    def __str__(self):
+        return self.size + ' ' + self.color
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
