@@ -78,10 +78,13 @@ def addToCart(request):
 def deleteItemcart(request,order_id):
     api_params = {'id':order_id}
     url = 'http://localhost:8000/apis/saleorders/{id}/'.format(**api_params)
-    apicall = requests.get(url)
-    print(apicall.url)
-    json_respons = apicall.json()
-    print('json_respons:', json_respons)
+    # apicall = requests.get(url)
+    # print(apicall.url)
+    # json_respons = apicall.json()
+    # print('json_respons:', json_respons)
 
     delete = requests.delete(url)
     return redirect('cart')
+
+def payment(request):
+    return render(request, 'esite/payment.html')

@@ -15,6 +15,14 @@ class Customer(models.Model):
         return self.name
 
 
+class ProductVariant(models.Model):
+    variant = models.CharField(max_length=200)
+    color = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.variant + ' ' + self.color
+    
+
 class ProductCategory(models.Model):
     name = models.CharField(max_length=200 , null=True)
 
@@ -33,6 +41,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='product_images/', null=True , blank=True)
     # image = ResizedImageField(size=[222, 222], upload_to='product_images/', null=True , blank=True)
     brand_name = models.CharField(max_length=200 , null=True)
+    product_variant = models.ForeignKey(ProductVariant,null=True , blank=True , on_delete=models.CASCADE)
 
 
     def __str__(self):
@@ -60,6 +69,8 @@ class SaleOrder(models.Model):
         # total = sum([item.quantity for item in order_items])
         total = len(order_items)
         return total
+
+
 
 
 class OrderItem(models.Model):
