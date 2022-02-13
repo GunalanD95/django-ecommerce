@@ -26,7 +26,8 @@ class ProductCategory(models.Model):
         return self.name
 
 class ProductVariant(models.Model):
-    category = models.OneToOneField(ProductCategory,null=True, on_delete=models.CASCADE)
+
+    category = models.ForeignKey(ProductCategory,null=True, on_delete=models.CASCADE)
     variant = models.CharField(max_length=200,null=True)
     color = models.CharField(max_length=200,null=True)
     size = models.CharField(max_length=200,null=True)
@@ -34,7 +35,11 @@ class ProductVariant(models.Model):
     def __str__(self):
         return self.size + ' ' + self.color
 
+
+
+
 class Product(models.Model):
+
     name = models.CharField(max_length=200)
     display_name = models.CharField(max_length=25, null=True)
     description = models.TextField(max_length=1000 , null=True)

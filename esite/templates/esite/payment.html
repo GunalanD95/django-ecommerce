@@ -10,18 +10,28 @@
 <section id="payheader" class="section-p1">
 
     <div class="pay-box">
+        <h2>Confirm Your Payment</h2>
         <div>
-            <input type="text">
-            <input type="number" name="" id="">
+            <label for="owner">Owner</label>
+            <input name="owner" type="text">
+            <label for="cvv">CVV</label>
+            <input name="cvv" type="number" name="" id="">
         </div>
         <div>
-            <input type="number" name="" id="">
+            <label for="card-num">Card Number</label>
+            <input name="card-num" type="number" name="" id="">
         </div>
         <div>
             <div class="card-bun">
-                <input type="text" name="" id="">
+                <label for="val">Valdity </label>
+                <select name="val" id="val">
+                    <option value="jan">Jan</option>
+                </select>
             </div>
             <img src="{% static '/img/pay/pay.png' %}" alt="">
+        </div>
+        <div>
+            <button type="submit">CONFIRM</button>
         </div>
     </div>
 
