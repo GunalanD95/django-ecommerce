@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import redirect, render
-from .models import Product, ProductCategory , Customer , SaleOrder , OrderItem
+from .models import Product, ProductCategory , Customer , SaleOrder , OrderItem , ProductVariant
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import requests
@@ -18,9 +18,11 @@ def shop(request):
 
 def product(request,product_id):
     product = Product.objects.get(id=product_id)
-    variant = product.variant.all()
+    variant = ProductVariant.objects.all().order_by('product__variant')
+
     context = {
         'product': product,
+        'variant': variant,
     }
     return render(request, 'esite/product.html', context)
 

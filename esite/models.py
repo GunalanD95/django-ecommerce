@@ -49,7 +49,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='product_images/', null=True , blank=True)
     # image = ResizedImageField(size=[222, 222], upload_to='product_images/', null=True , blank=True)
     brand_name = models.CharField(max_length=200 , null=True)
-    variant = models.ManyToManyField(ProductVariant,null=True , blank=True )
+    variant = models.OneToOneField(ProductVariant,null=True , blank=True, on_delete=models.CASCADE )
 
 
     def __str__(self):
