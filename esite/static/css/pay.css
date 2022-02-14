@@ -4,4 +4,19 @@
     border: 1px solid #ccc;
 }
 
-.pay-box{}
+.pay-box{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:30px;    
+}
+
+.pay-box .card-bun{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
