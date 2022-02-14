@@ -17,6 +17,23 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
     border-bottom: 1px solid #ccc;
+}
+
+
+button{
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-weight: bolder;
+    font-size: 15px;
+    font-weight: bolder;
+    color: #fff;
+    background: #FD7F20;
+    margin-top: 5px;
+}
+
+button:hover{
+    background-color: #0B6F5F;
+    color: #fff;
+    transition: 0.5s ease;
 }
