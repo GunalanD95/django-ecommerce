@@ -91,3 +91,15 @@ def deleteItemcart(request,order_id):
 
 def payment(request):
     return render(request, 'esite/payment.html')
+
+def search(request):
+    if request.method == 'POST':
+        search_text = request.POST['search_text']
+        print(search_text, 'search_text')
+        products = Product.objects.filter(name__icontains=search_text)
+        context = {
+            'products': products,
+        }
+        return render(request, 'esite/shop.html', context)
+    else:
+        return redirect('shop')
