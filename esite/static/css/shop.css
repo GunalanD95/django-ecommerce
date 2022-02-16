@@ -340,3 +340,24 @@ footer .install img{
 }
 
 /* FOOTER ENDS */
+
+.search-bar input{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 50%;
+    font-size: 15px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 3rem;
+}
+
+.search-bar .fa-search{
+    padding: 10px;
+    font-size: 15px;
+}
+
+.search-bar .fa-search:hover{
+    color: #088178;
+    cursor: pointer;
+}

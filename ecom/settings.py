@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'esite',
     'apis',
+    # 'django_elasticsearch_dsl',
 ]
 
 MIDDLEWARE = [
